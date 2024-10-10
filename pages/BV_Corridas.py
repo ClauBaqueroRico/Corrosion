@@ -146,7 +146,7 @@ html_content = """
             <div class="link-box">
                 <h2>Analítica</h2>
                 <div class="link-item">
-                    <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Analítica Illis</a>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiZTgwMWE2MDYtZjEwNS00MWYwLWJkNDItZmRjYjg5NWJkMGQwIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9" target="_blank">Informe de Analítica Illis</a>
                 </div>
                 <div class="link-item">
                     <a href="http://example.com/analitica2" target="_blank">Informe de Analítica 2</a>
