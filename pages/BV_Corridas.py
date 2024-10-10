@@ -2,14 +2,9 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import streamlit.components.v1 as components
-import streamlit as st
 import login
 
-
-login.generarLogin()
-if 'usuario' not in st.session_state:
-    st.warning("Por favor, inicie sesión para acceder a esta página.")
-    st.stop()
+# Configuración de la página: debe ser la primera llamada de Streamlit
 st.set_page_config(
     page_title="Corrosion Interna Cenit",
     page_icon="📊",
@@ -17,10 +12,18 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Cargamos fecha actual
+# Cargar el sistema de login
+login.generarLogin()
+
+# Verificar si el usuario ha iniciado sesión
+if 'usuario' not in st.session_state:
+    st.warning("Por favor, inicie sesión para acceder a esta página.")
+    st.stop()
+
+# Cargar la fecha actual
 today = datetime.today().strftime("%Y")
 
-# Cargamos librerías de MaterializeCSS, Material Icons y Font Awesome
+# Cargar librerías CSS externas
 st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">', unsafe_allow_html=True)
 st.markdown('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">', unsafe_allow_html=True)
 st.markdown('<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">', unsafe_allow_html=True)
@@ -93,12 +96,12 @@ html_content = """
             color: #77aadd;
         }
         .embed-container {
-            margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+            margin-top: 50px;
             text-align: center;
         }
         .embed-container iframe {
-            width: 100%; /* Ajusta el ancho del iframe según sea necesario */
-            height: 600px; /* Ajusta la altura del iframe según sea necesario */
+            width: 100%;
+            height: 600px;
         }
         @media (max-width: 768px) {
             .link-box {
@@ -121,7 +124,6 @@ html_content = """
                 <div class="link-item">
                     <a href="https://app.powerbi.com/view?r=eyJrIjoiNTk1MDIwMmMtYjEzZi00NDkwLTk2ZDItZjQyYjM1Mzc3NjEyIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9" target="_blank">Tablero de Control Administrativo</a>
                 </div>
-                <!-- Agrega más enlaces aquí -->
             </div>
             <div class="link-box">
                 <h2>Corrosión Interna</h2>
@@ -131,7 +133,6 @@ html_content = """
                 <div class="link-item">
                     <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Corrosión Interna 2</a>
                 </div>
-                <!-- Agrega más enlaces aquí -->
             </div>
             <div class="link-box">
                 <h2>Corrosión Externa</h2>
@@ -141,7 +142,6 @@ html_content = """
                 <div class="link-item">
                     <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Corrosión Externa 2</a>
                 </div>
-                <!-- Agrega más enlaces aquí -->
             </div>
             <div class="link-box">
                 <h2>Analítica</h2>
@@ -151,7 +151,6 @@ html_content = """
                 <div class="link-item">
                     <a href="http://example.com/analitica2" target="_blank">Informe de Analítica 2</a>
                 </div>
-                <!-- Agrega más enlaces aquí -->
             </div>
         </div>
     </div>
@@ -163,6 +162,7 @@ html_content = """
 </html>
 """
 
-# Render the HTML content
+# Renderizar el contenido HTML
 components.html(html_content, height=1500)
+
 
