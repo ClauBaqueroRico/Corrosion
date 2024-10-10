@@ -112,14 +112,14 @@ html_content = """
                     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=FNT6_6O2Mk-pvULSj8gR8dSPcBsCbEhJgdkPK01vntFURU9EMVg5V1UwWFpJRjA2NTJUTk5CSUVWNSQlQCN0PWcu" target="_blank">Reporte Diario Operativo</a>
                 </div>
                 <div class="link-item">
-                    <a href="https://app.powerbi.com/reportEmbed?reportId=46dd64bd-1da5-4d0a-87db-1057534d3d41&autoAuth=true&ctid=fabd047c-ff48-492a-8bbb-8f98b9fb9cca" target="_blank">Tablero de Control Administrativo</a>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiNTk1MDIwMmMtYjEzZi00NDkwLTk2ZDItZjQyYjM1Mzc3NjEyIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9" target="_blank">Tablero de Control Administrativo</a>
                 </div>
                 <!-- Agrega más enlaces aquí -->
             </div>
             <div class="link-box">
                 <h2>Corrosión Interna</h2>
                 <div class="link-item">
-                    <a href="https://app.powerbi.com/reportEmbed?reportId=155a48bb-acbb-4034-b589-9cddb7552176&autoAuth=true&ctid=fffad414-b6a3-4f32-a9bd-42d28fc811f1" target="_blank">Informe de Corrosión Interna</a>
+                    <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Corrosión Interna</a>
                 </div>
                 <div class="link-item">
                     <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Corrosión Interna 2</a>
@@ -132,14 +132,14 @@ html_content = """
                     <a href="https://app.bureauveritas.com.co/URPCv2/Account/Login" target="_blank">Gestión de Corrosión</a>
                 </div>
                 <div class="link-item">
-                    <a href="https://app.powerbi.com/reportEmbed?reportId=b9f01638-88f8-4ba3-9592-31fb5baa966a&autoAuth=true&ctid=fffad414-b6a3-4f32-a9bd-42d28fc811f1" target="_blank">Informe de Corrosión Externa 2</a>
+                    <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Corrosión Externa 2</a>
                 </div>
                 <!-- Agrega más enlaces aquí -->
             </div>
             <div class="link-box">
                 <h2>Analítica</h2>
                 <div class="link-item">
-                    <a href="https://app.powerbi.com/reportEmbed?reportId=2b7a9563-6e29-476b-a930-df9c56bf4f8a&autoAuth=true&ctid=fffad414-b6a3-4f32-a9bd-42d28fc811f1" target="_blank">Informe de Analítica Illis</a>
+                    <a href="http://example.com/corrosioninterna2" target="_blank">Informe de Analítica Illis</a>
                 </div>
                 <div class="link-item">
                     <a href="http://example.com/analitica2" target="_blank">Informe de Analítica 2</a>
@@ -150,7 +150,7 @@ html_content = """
     </div>
     <div class="embed-container">
         <h2>KPI_**</h2>
-        <iframe title="Dash-PDT-BV_Actualizado 2024" width="1140" height="600" src="https://app.powerbi.com/reportEmbed?reportId=564bbf3b-941b-4530-943f-bc59a228559b&autoAuth=true&ctid=fffad414-b6a3-4f32-a9bd-42d28fc811f1" frameborder="0" allowFullScreen="true"></iframe>
+        <iframe title="Dash-PDT-BV_Actualizado 2024V2" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNTk1MDIwMmMtYjEzZi00NDkwLTk2ZDItZjQyYjM1Mzc3NjEyIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
 </body>
 </html>
