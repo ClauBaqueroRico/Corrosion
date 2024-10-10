@@ -157,5 +157,5 @@ html_content = """
 """
 
 # Render the HTML content
-components.html(html_content, height=800)
+components.html(html_content, height=1500)
 
