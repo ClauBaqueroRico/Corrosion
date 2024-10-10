@@ -26,5 +26,5 @@ if 'usuario' in st.session_state:
     st.subheader('Información página principal')
     
     # Agregar el tablero embebido de Power BI
-    power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZDAyYTkyODUtZjNlYi00YWRmLThmOTgtNjQwMjRiYTkxNWNlIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"  # Reemplaza con tu URL de Power BI
+    # power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZDAyYTkyODUtZjNlYi00YWRmLThmOTgtNjQwMjRiYTkxNWNlIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"  # Reemplaza con tu URL de Power BI
     st.components.v1.iframe(power_bi_url, width=800, height=600, scrolling=True)
