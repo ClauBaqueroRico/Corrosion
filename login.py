@@ -5,11 +5,9 @@ import pandas as pd
 
 def validarUsuario(usuario,clave):    
     """Permite la validación de usuario y clave
-
     Args:
         usuario (str): usuario a validar
         clave (str): clave del usuario
-
     Returns:
         bool: True usuario valido, False usuario invalido
     """    
@@ -21,7 +19,6 @@ def validarUsuario(usuario,clave):
 
 def generarMenu(usuario):
     """Genera el menú dependiendo del usuario
-
     Args:
         usuario (str): usuario utilizado para generar el menú
     """        
