@@ -2,7 +2,14 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 import streamlit.components.v1 as components
+import streamlit as st
+import login
 
+
+login.generarLogin()
+if 'usuario' not in st.session_state:
+    st.warning("Por favor, inicie sesión para acceder a esta página.")
+    st.stop()
 st.set_page_config(
     page_title="Corrosion Interna Cenit",
     page_icon="📊",
