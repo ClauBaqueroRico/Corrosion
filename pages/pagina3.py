@@ -10,17 +10,13 @@ import login  # Asegúrate de que este módulo esté definido correctamente.
 # Función de inicio de sesión
 login.generarLogin()
 
-
 # Configuración de la página: debe ser la primera llamada de Streamlit
 st.set_page_config(
-        page_title="Visor de Cuadrillas",
-        page_icon="🌐",
-        layout='wide',
-        initial_sidebar_state="expanded"
-    )
-
-# Cargar el sistema de login
-login.generarLogin()
+    page_title="Visor de Cuadrillas",
+    page_icon="🌐",
+    layout='wide',
+    initial_sidebar_state="expanded"
+)
 
 # Verificar si el usuario ha iniciado sesión
 if 'usuario' not in st.session_state:
@@ -118,6 +114,3 @@ with tab3:
 # Pestaña 4: Datos
 with tab4:
     st.dataframe(dfCuadrillas, use_container_width=True)
-
-else:
-st.warning("Por favor, inicia sesión para acceder a la aplicación.")
