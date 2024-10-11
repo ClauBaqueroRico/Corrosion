@@ -64,7 +64,7 @@ for index, (title, links) in enumerate(sections.items()):
 
 # Sección de Estrategia y enlace a "Otros"
 st.markdown("### Estrategia")
-st.markdown("[![data_thresholding](https://path/to/world-logo.png)](http://example.com/otros) Otros")
+st.markdown("[🔐 Estrategia Consolidada](https://app.powerbi.com/view?r=eyJrIjoiZDAyYTkyODUtZjNlYi00YWRmLThmOTgtNjQwMjRiYTkxNWNlIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9)")
 
-
-
+# Enlace a "Otros"
+st.markdown("[( https://telemetria.detektorgps.com/telemetria_v2/index.php) Detektor")
