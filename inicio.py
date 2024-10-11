@@ -30,56 +30,54 @@ col2.header('Bienvenido :blue[porfavor navegue en el panel izquierdo]')
 # Llamar la función de login
 # Verificar si el usuario ha iniciado sesión
 if 'usuario' in st.session_state:
+    if 'df' not in st.session_state:
+        st.session_state.df = df  # Inicializar df en session_state
+
     st.subheader('KPI Generales')
 
-    # Define the edited_df DataFrame
     edited_df = pd.DataFrame({
         'Date Submitted': pd.date_range(start='3/1/2024', periods=100, freq='M'),
         'Status': ['Open', 'Closed', 'Pending'] * 33 + ['Open'],
         'Priority': ['High', 'Medium', 'Low'] * 33 + ['High']
     })
 
-    # Show some metrics and charts about the ticket.
+    # Mostrar métricas
     st.header("Statistics")
-    # Show some metrics and charts about the ticket.
-st.header("Statistics")
 
-# Show metrics side by side using `st.columns` and `st.metric`.
-col1, col2, col3 = st.columns(3)
-num_open_tickets = len(st.session_state.df[st.session_state.df.Status == "Open"])
-col1.metric(label="Number of open tickets", value=num_open_tickets, delta=10)
-col2.metric(label="First response time (hours)", value=5.2, delta=-1.5)
-col3.metric(label="Average resolution time (hours)", value=16, delta=2)
+    col1, col2, col3 = st.columns(3)
+    num_open_tickets = len(st.session_state.df[st.session_state.df.Status == "Open"])
+    col1.metric(label="Number of open tickets", value=num_open_tickets, delta=10)
+    col2.metric(label="First response time (hours)", value=5.2, delta=-1.5)
+    col3.metric(label="Average resolution time (hours)", value=16, delta=2)
 
-# Show two Altair charts using `st.altair_chart`.
-st.write("")
-st.write("##### Atención realiza por mes")
-status_plot = (
-    alt.Chart(edited_df)
-    .mark_bar()
-    .encode(
-        x="month(Date Submitted):O",
-        y="count():Q",
-        xOffset="Status:N",
-        color="Status:N",
+    # Mostrar gráficos
+    st.write("##### Atención realizada por mes")
+    status_plot = (
+        alt.Chart(edited_df)
+        .mark_bar()
+        .encode(
+            x="month(Date Submitted):O",
+            y="count():Q",
+            xOffset="Status:N",
+            color="Status:N",
+        )
+        .configure_legend(
+            orient="bottom", titleFontSize=14, labelFontSize=14, titlePadding=5
+        )
     )
-    .configure_legend(
-        orient="bottom", titleFontSize=14, labelFontSize=14, titlePadding=5
-    )
-)
-st.altair_chart(status_plot, use_container_width=True, theme="streamlit")
+    st.altair_chart(status_plot, use_container_width=True, theme="streamlit")
 
-st.write("##### Atneción realizada según prioridad")
-priority_plot = (
-    alt.Chart(edited_df)
-    .mark_arc()
-    .encode(theta="count():Q", color="Priority:N")
-    .properties(height=300)
-    .configure_legend(
-        orient="bottom", titleFontSize=14, labelFontSize=14, titlePadding=5
+    st.write("##### Atención realizada según prioridad")
+    priority_plot = (
+        alt.Chart(edited_df)
+        .mark_arc()
+        .encode(theta="count():Q", color="Priority:N")
+        .properties(height=300)
+        .configure_legend(
+            orient="bottom", titleFontSize=14, labelFontSize=14, titlePadding=5
+        )
     )
-)
-st.altair_chart(priority_plot, use_container_width=True, theme="streamlit")
+    st.altair_chart(priority_plot, use_container_width=True, theme="streamlit")
 
     
     # Agregar el tablero embebido de Power BI
