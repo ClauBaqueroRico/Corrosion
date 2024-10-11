@@ -22,7 +22,7 @@ if 'usuario' not in st.session_state:
 today = datetime.today().strftime("%Y")
 
 # Títulos y estilo
-st.subheader('Servicios de Atención Integral de la Amenaza de Corrosión en Equipos Estáticos de la Infraestructura de Transporte de Hidrocarburos')
+st.markdown("<h2 style='color: blue; font-weight: bold;'>Servicios de Atención Integral de la Amenaza de Corrosión en Equipos Estáticos de la Infraestructura de Transporte de Hidrocarburos</h2>", unsafe_allow_html=True)
 
 # Contenedor principal
 st.title("Links de interés y tableros de control")
@@ -35,15 +35,15 @@ sections = {
     ],
     "Corrosión Interna": [
         ("Informe de Corrosión Interna", "http://example.com/corrosioninterna2"),
-        ("Informe de Corrosión Interna 2", "http://example.com/corrosioninterna2")
+        ("Informe de Corridas", "https://app.powerbi.com/view?r=eyJrIjoiODEyOTkzYzUtOWU5Ni00MmFhLWEwNjgtZjk5OTZmOTU2NWM2IiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9")
     ],
     "Corrosión Externa": [
         ("Gestión de Corrosión", "https://app.bureauveritas.com.co/URPCv2/Account/Login"),
-        ("Informe de Corrosión Externa 2", "http://example.com/corrosioninterna2")
+        ("Informe de Corrosión Externa", "https://app.powerbi.com/view?r=eyJrIjoiZmVkMWEwMzktOTRiMy00NTViLTliNTgtZTI3NDNhMDAwYjVkIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9")
     ],
     "Analítica": [
         ("Informe de Analítica Illis", "https://app.powerbi.com/view?r=eyJrIjoiZTgwMWE2MDYtZjEwNS00MWYwLWJkNDItZmRjYjg5NWJkMGQwIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"),
-        ("Informe de Analítica 2", "http://example.com/analitica2")
+        ("Reportes Emitidos", "http://example.com/analitica2")
     ]
 }
 
