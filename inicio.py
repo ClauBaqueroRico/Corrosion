@@ -28,6 +28,7 @@ with col3:
 col2.header('Bienvenido :blue[porfavor navegue en el panel izquierdo]')
 
 # Llamar la función de login
+login.generarLogin()
 # Verificar si el usuario ha iniciado sesión
 if 'usuario' in st.session_state:
     if 'df' not in st.session_state:
