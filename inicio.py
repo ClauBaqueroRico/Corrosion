@@ -30,11 +30,11 @@ col2.header('Bienvenido :blue[porfavor navegue en el panel izquierdo]')
 # Llamar la función de login
 # Verificar si el usuario ha iniciado sesión
 if 'usuario' in st.session_state:
-    st.subheader('Información página principal')
+    st.subheader('KPI Generales')
 
     # Define the edited_df DataFrame
     edited_df = pd.DataFrame({
-        'Date Submitted': pd.date_range(start='1/1/2022', periods=100, freq='M'),
+        'Date Submitted': pd.date_range(start='3/1/2024', periods=100, freq='M'),
         'Status': ['Open', 'Closed', 'Pending'] * 33 + ['Open'],
         'Priority': ['High', 'Medium', 'Low'] * 33 + ['High']
     })
@@ -53,7 +53,7 @@ col3.metric(label="Average resolution time (hours)", value=16, delta=2)
 
 # Show two Altair charts using `st.altair_chart`.
 st.write("")
-st.write("##### Ticket status per month")
+st.write("##### Atención realiza por mes")
 status_plot = (
     alt.Chart(edited_df)
     .mark_bar()
@@ -69,7 +69,7 @@ status_plot = (
 )
 st.altair_chart(status_plot, use_container_width=True, theme="streamlit")
 
-st.write("##### Current ticket priorities")
+st.write("##### Atneción realizada según prioridad")
 priority_plot = (
     alt.Chart(edited_df)
     .mark_arc()

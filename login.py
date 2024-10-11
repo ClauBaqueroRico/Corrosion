@@ -25,6 +25,7 @@ def generarMenu(usuario):
     with st.sidebar:
         # Cargamos la tabla de usuarios
         dfusuarios = pd.read_csv('usuarios.csv')
+        df = pd.read_csv('df.csv')
         # Filtramos la tabla de usuarios
         dfUsuario =dfusuarios[(dfusuarios['usuario']==usuario)]
         # Cargamos el nombre del usuario
