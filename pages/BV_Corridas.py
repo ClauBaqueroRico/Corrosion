@@ -67,4 +67,4 @@ st.markdown("### Estrategia")
 st.markdown("[🔐 Estrategia Consolidada](https://app.powerbi.com/view?r=eyJrIjoiZDAyYTkyODUtZjNlYi00YWRmLThmOTgtNjQwMjRiYTkxNWNlIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9)")
 
 # Enlace a "Otros"
-st.markdown("[( https://telemetria.detektorgps.com/telemetria_v2/index.php) Detektor")
+st.markdown("[Detektor](https://telemetria.detektorgps.com/telemetria_v2/index.php)")
