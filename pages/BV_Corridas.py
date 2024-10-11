@@ -6,7 +6,7 @@ import login
 
 # Configuración de la página: debe ser la primera llamada de Streamlit
 st.set_page_config(
-    page_title="8000009037 Servicios de Atención Integral de la Amenaza de Corrosión en Equipos Estáticos de la Infraestructura de Transporte de Hidrocarburos",
+    page_title="Informacion Corrosion Integral",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -28,6 +28,8 @@ st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs
 st.markdown('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">', unsafe_allow_html=True)
 st.markdown('<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">', unsafe_allow_html=True)
 
+
+st.subheader('Servicios de Atención Integral de la Amenaza de Corrosión en Equipos Estáticos de la Infraestructura de Transporte de Hidrocarburos')
 # HTML content
 html_content = """
 <!DOCTYPE html>
@@ -112,7 +114,7 @@ html_content = """
 </head>
 <body>
     <header>
-        
+        <h1>Links de interes y tableros de control</h1>
     </header>
     <div class="container">
         <div class="link-section">
