@@ -7,9 +7,6 @@ from folium.plugins import MarkerCluster
 import numpy as np
 import login  # Asegúrate de que este módulo esté definido correctamente.
 
-# Función de inicio de sesión
-login.generarLogin()
-
 # Configuración de la página: debe ser la primera llamada de Streamlit
 st.set_page_config(
     page_title="Visor de Cuadrillas",
@@ -17,6 +14,9 @@ st.set_page_config(
     layout='wide',
     initial_sidebar_state="expanded"
 )
+
+# Función de inicio de sesión
+login.generarLogin()
 
 # Verificar si el usuario ha iniciado sesión
 if 'usuario' not in st.session_state:
