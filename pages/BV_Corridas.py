@@ -154,10 +154,6 @@ html_content = """
             </div>
         </div>
     </div>
-    <div class="embed-container">
-        <h2>KPI_**</h2>
-        <iframe title="Dash-PDT-BV_Actualizado 2024V2" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNTk1MDIwMmMtYjEzZi00NDkwLTk2ZDItZjQyYjM1Mzc3NjEyIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
-    </div>
 </body>
 </html>
 """

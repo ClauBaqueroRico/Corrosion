@@ -11,14 +11,7 @@ col1, col2, col3 = st.columns([1, 6, 1])  # Ajusta los anchos de las columnas co
 
 # Colocar el logo en la columna izquierda
 with col1:
-    st.markdown(
-        """
-        <div style="background-color: #f0f0f0; padding: 10px;">
-            <img src="LogoBV-White.png" width="150">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image("LogoBV-White.png", width=150)
 
 # Colocar el logo en la columna derecha
 with col3:
@@ -37,13 +30,13 @@ if 'usuario' in st.session_state:
     st.subheader('KPI Generales')
 
     edited_df = pd.DataFrame({
-        'Date Submitted': pd.date_range(start='3/1/2024', periods=100, freq='M'),
+        'Date Submitted': pd.date_range(start='1/3/2024', periods=100, freq='M'),
         'Status': ['Open', 'Closed', 'Pending'] * 33 + ['Open'],
         'Priority': ['High', 'Medium', 'Low'] * 33 + ['High']
     })
 
     # Mostrar métricas
-    st.header("Statistics")
+    st.header("Estadísticas de atención")
 
     col1, col2, col3 = st.columns(3)
     num_open_tickets = len(st.session_state.df[st.session_state.df.Status == "Open"])
