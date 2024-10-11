@@ -5,23 +5,30 @@ import pandas as pd
 
 # Configuración de la página
 st.set_page_config(page_title="Corrosion Interna", page_icon="📶", layout="wide")
+df = pd.read_csv('df.csv')
+# Crear columnas para los logos
+col1, col2, col3 = st.columns([1, 6, 1])  # Ajusta los anchos de las columnas como prefieras
 
-# Llamar a la función de login
+# Colocar el logo en la columna izquierda
+with col1:
+    st.image("LogoBV-White.png", width=150)
+
+# Colocar el logo en la columna derecha
+with col3:
+    st.image("Cenit_Logo.png", width=150)  # Ajusta el tamaño según sea necesario
+
+# El header del login centrado
+col2.header('Bienvenido :blue[porfavor navegue en el panel izquierdo]')
+
+# Llamar la función de login
 login.generarLogin()
-
 # Verificar si el usuario ha iniciado sesión
 if 'usuario' in st.session_state:
-    # Crear columnas para los logos
-    col1, col2, col3 = st.columns([1, 6, 1])
-    with col1:
-        st.image("LogoBV-White.png", width=150)
-    with col3:
-        st.image("Cenit_Logo.png", width=150)
+    if 'df' not in st.session_state:
+        st.session_state.df = df  # Inicializar df en session_state
 
-    # Header de bienvenida
-    col2.header('Bienvenido :blue[por favor navegue en el panel izquierdo]')
+    st.subheader('KPI Generales')
 
-    # Datos para las métricas de atención
     edited_df = pd.DataFrame({
         'Date Submitted': pd.date_range(start='1/3/2024', periods=100, freq='M'),
         'Status': ['Open', 'Closed', 'Pending'] * 33 + ['Open'],
@@ -30,13 +37,14 @@ if 'usuario' in st.session_state:
 
     # Mostrar métricas
     st.header("Estadísticas de atención")
+
     col1, col2, col3 = st.columns(3)
     num_open_tickets = len(st.session_state.df[st.session_state.df.Status == "Open"])
     col1.metric(label="Number of open tickets", value=num_open_tickets, delta=10)
     col2.metric(label="First response time (hours)", value=5.2, delta=-1.5)
     col3.metric(label="Average resolution time (hours)", value=16, delta=2)
 
-    # Mostrar gráficos de atención
+    # Mostrar gráficos
     st.write("##### Atención realizada por mes")
     status_plot = (
         alt.Chart(edited_df)
@@ -64,6 +72,11 @@ if 'usuario' in st.session_state:
         )
     )
     st.altair_chart(priority_plot, use_container_width=True, theme="streamlit")
+
+    
+    # Agregar el tablero embebido de Power BI
+    # power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZDAyYTkyODUtZjNlYi00YWRmLThmOTgtNjQwMjRiYTkxNWNlIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"  # Reemplaza con tu URL de Power BI
+    #st.components.v1.iframe(power_bi_url, width=800, height=600, scrolling=True)
 
     # Cargar el DataFrame de indicadores KPI
     df_indicadores = pd.DataFrame({
@@ -126,9 +139,3 @@ if 'usuario' in st.session_state:
 
 else:
     st.warning("Por favor, inicia sesión para acceder a esta página.")
-
-
-    
-    # Agregar el tablero embebido de Power BI
-    # power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZDAyYTkyODUtZjNlYi00YWRmLThmOTgtNjQwMjRiYTkxNWNlIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"  # Reemplaza con tu URL de Power BI
-    #st.components.v1.iframe(power_bi_url, width=800, height=600, scrolling=True)
