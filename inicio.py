@@ -5,7 +5,7 @@ import pandas as pd
 
 # Configuración de la página
 st.set_page_config(page_title="Corrosion Interna", page_icon="📶", layout="wide")
-
+df = pd.read_csv('df.csv')
 # Crear columnas para los logos
 col1, col2, col3 = st.columns([1, 6, 1])  # Ajusta los anchos de las columnas como prefieras
 
