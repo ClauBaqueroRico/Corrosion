@@ -107,16 +107,21 @@ if 'usuario' in st.session_state:
     df_indicadores_melted['Cumplimiento'] = df_indicadores_melted['Cumplimiento'].replace('-', '0%')
     df_indicadores_melted['Cumplimiento'] = df_indicadores_melted['Cumplimiento'].str.rstrip('%').astype(float) / 100
 
+    # Selector de indicador
+    indicador_seleccionado = st.selectbox("Seleccione un indicador", df_indicadores['Indicador'])
+
+    # Filtrar el DataFrame por el indicador seleccionado
+    df_filtrado = df_indicadores_melted[df_indicadores_melted['Indicador'] == indicador_seleccionado]
+
     # Gráfico para el cumplimiento de ejecución
     st.subheader('Cumplimiento de Ejecución de Órdenes')
     cumplimiento_plot = (
-        alt.Chart(df_indicadores_melted)
+        alt.Chart(df_filtrado)
         .mark_line(point=True)
         .encode(
-            x='Mes:O',
+            x=alt.X('Mes:O', sort=['Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre']),
             y='Cumplimiento:Q',
-            color='Indicador:N',
-            strokeDash='Frecuencia:N'
+            color='Indicador:N'
         )
         .properties(title='Cumplimiento de Ejecución de Órdenes por Mes')
     )
@@ -128,13 +133,18 @@ if 'usuario' in st.session_state:
         alt.Chart(df_indicadores_melted)
         .mark_bar()
         .encode(
-            x='Mes:O',
+            x=alt.X('Mes:O', sort=['Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre']),
             y='sum(Cumplimiento):Q',
             color='Indicador:N',
-            column='Frecuencia:N'
+            tooltip=['Indicador:N', 'sum(Cumplimiento):Q'],
+            # Agregar etiquetas de texto a las barras
         )
         .properties(title='Comparativa de KPIs por Mes')
+        .mark_bar().encode(
+            text=alt.Text('sum(Cumplimiento):Q')  # Añadir etiquetas de valores
+        )
     )
+    
     st.altair_chart(comparativa_plot, use_container_width=True)
 
 else:
