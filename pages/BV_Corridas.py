@@ -6,7 +6,7 @@ import login
 
 # Configuración de la página: debe ser la primera llamada de Streamlit
 st.set_page_config(
-    page_title="Corrosion Interna Cenit",
+    page_title="8000009037 Servicios de Atención Integral de la Amenaza de Corrosión en Equipos Estáticos de la Infraestructura de Transporte de Hidrocarburos",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -112,7 +112,7 @@ html_content = """
 </head>
 <body>
     <header>
-        <h1>Contrato 8000009037  Servicios de Atención Integral de la Amenaza de Corrosión en Equipos Estáticos de la Infraestructura de Transporte de Hidrocarburos</h1>
+        
     </header>
     <div class="container">
         <div class="link-section">
@@ -159,6 +159,6 @@ html_content = """
 """
 
 # Renderizar el contenido HTML
-components.html(html_content, height=1500)
+components.html(html_content, height=800)
 
 
