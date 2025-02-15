@@ -39,7 +39,9 @@ sections = {
     ],
     "Corrosión Externa": [
         ("Gestión de Corrosión", "https://app.bureauveritas.com.co/URPCv2/Account/Login"),
-        ("Informe de Corrosión Externa", "https://app.powerbi.com/view?r=eyJrIjoiZmVkMWEwMzktOTRiMy00NTViLTliNTgtZTI3NDNhMDAwYjVkIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9")
+        ("Informe SPC líneas", "https://app.powerbi.com/view?r=eyJrIjoiZmVkMWEwMzktOTRiMy00NTViLTliNTgtZTI3NDNhMDAwYjVkIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"),
+        ("Informe SPC plantas", "https://app.powerbi.com/view?r=eyJrIjoiNGJjNzY4MTItZTI2OS00ZjIyLTkwM2ItNzRjZGI5YWFlNmZjIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9")
+        
     ],
     "Analítica": [
         ("Informe de Analítica Illis", "https://app.powerbi.com/view?r=eyJrIjoiZTgwMWE2MDYtZjEwNS00MWYwLWJkNDItZmRjYjg5NWJkMGQwIiwidCI6ImE2YjRmOTliLWQ1NzItNDFhYy05MDExLTRkMzAyNTBiYjkyYiIsImMiOjR9"),
