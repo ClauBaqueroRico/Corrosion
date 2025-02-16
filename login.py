@@ -36,8 +36,8 @@ def generarMenu(usuario):
         st.subheader("Tableros")
         st.page_link("pages/BV_Corridas.py", label="Tableros", icon=":material/dashboard:")
         st.page_link("pages/Semanal.py", label="Análisis", icon=":material/assessment:")
-        st.page_link("pages/Mapa.py", label="Personal", icon=":material/group:")
-        st.page_link("pages/Reporte.py", label="Personal", icon=":material/group:")     
+        st.page_link("pages/Mapa.py", label="Ubicación Cuadrillas", icon=":material/group:")
+        st.page_link("pages/Reporte.py", label="Progrmación personal", icon=":material/group:")     
         # Botón para cerrar la sesión
         btnSalir=st.button("Salir")
         if btnSalir:
